@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Inserir Filme</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <form [formGroup]="inserirFilmeForm" (ngSubmit)="addFilme()">
+        <ion-list inset>
+          <ion-item class="input-left">
+            <ion-input type="text" formControlName="filme" placeholder="Filme"></ion-input>
+          </ion-item>
+          <ion-item class="input-left">
+            <ion-input type="text" formControlName="titulo_original" placeholder="Título Original"></ion-input>
+          </ion-item>  
+          <ion-item class="input-left">
+            <ion-input type="text" formControlName="lancamento" placeholder="Lançamento"></ion-input>
+          </ion-item>
+          <ion-item class="input-left">
+            <ion-label class="label-margin-left">País</ion-label>
+            <ion-select  formControlName="pais" interface="popover">
+              <ion-option *ngFor="let p of paises" [value] = "p">{{p.pais}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="input-left">
+            <ion-label class="label-margin-left">Idioma</ion-label>
+            <ion-select  formControlName="idioma" interface="popover">
+              <ion-option *ngFor="let i of idiomas" [value] = "i">{{i.idioma}} ({{i.sigla}})</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="input-left">
+            <ion-label class="label-margin-left">Distribuidor</ion-label>
+            <ion-select  formControlName="distribuidor" interface="popover">
+              <ion-option *ngFor="let d of distribuidores">{{d.distribuidor}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="input-left">
+            <ion-label class="label-margin-left">Genero</ion-label>
+            <ion-select  formControlName="genero" interface="popover">
+              <ion-option *ngFor="let g of generos">{{g.genero}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="input-left">
+            <ion-textarea #myInput id="myInput" rows="1" maxLength="500" 
+              (keyup)="adjust()" formControlName="sinopse" placeholder="Sinopse"></ion-textarea>   
+          </ion-item>  
+          <ion-item class="input-left">
+            <ion-input type="text" formControlName="duracao" placeholder="Duração"></ion-input>
+          </ion-item>
+          <ion-list class="btn-salvar">
+            <button ion-button color="secondary" [disabled]="!inserirFilmeForm.valid" full>salvar</button>
+          </ion-list>
+        </ion-list>
+      </form>
+
+</ion-content>

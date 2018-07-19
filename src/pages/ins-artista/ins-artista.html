@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Inserir Artista</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="inserirArtistaForm" (ngSubmit)="addArtista()">
+      <ion-list inset>
+        <ion-item class="input-left">
+          <ion-input type="text" formControlName="nome" placeholder="Nome"></ion-input>
+        </ion-item>
+        <ion-item class="input-left">
+          <ion-input type="text" formControlName="atividade" placeholder="Atividade"></ion-input>
+        </ion-item>          
+        <ion-item class="input-left">
+          <ion-label class="label-margin-left">País</ion-label>
+          <ion-select  formControlName="pais" interface="popover">
+            <ion-option *ngFor="let p of paises" [value] = "p">{{p.pais}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item class="input-left">
+          <ion-label class="label-margin-left">Nascimento</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY" formControlName="nascimento"
+            cancelText=Cancelar doneText=Ok></ion-datetime>
+        </ion-item>
+        <ion-list class="btn-salvar">
+            <button ion-button color="secondary" [disabled]="!inserirArtistaForm.valid" full>salvar</button>
+          </ion-list>
+      </ion-list>
+  </form>
+
+</ion-content>

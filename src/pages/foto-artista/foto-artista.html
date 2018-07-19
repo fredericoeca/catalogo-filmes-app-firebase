@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Foto do Artista</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <button ion-button class="btn" (click)="getImage()" full color="secondary">Escolher Foto do Artista</button>
+    <button ion-button class="btn" (click)="addImage(myphoto)" full color="info">Salvar</button>    
+    <p class="img-view"><img src="{{ myphoto }}"></p>
+
+</ion-content>

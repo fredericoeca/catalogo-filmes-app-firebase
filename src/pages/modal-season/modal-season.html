@@ -1,0 +1,26 @@
+<ion-header>
+<ion-navbar color="secondary">
+    <ion-buttons class="btn-dismiss" start>
+        <button ion-button (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
+      </ion-buttons>
+    <ion-title>Inserir Temporada</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="seasonForm" (ngSubmit)="addSeason()">
+    <ion-list inset>
+      <ion-item class="input-left">
+        <ion-input type="text" formControlName="temporada" placeholder="temporada"></ion-input>
+      </ion-item> 
+      <ion-item class="input-left">
+        <ion-input type="text" formControlName="lancamento" placeholder="lancamento"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-list class="btn-reg">
+      <button ion-button color="secondary" [disabled]="!seasonForm.valid" full>Salvar</button>
+    </ion-list>
+  </form>
+
+</ion-content>

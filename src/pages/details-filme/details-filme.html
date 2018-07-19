@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Detalhe do Filme</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list class="p-1">
+
+    <h3>{{filme.filme}}</h3>
+    <p>{{filme.titulo_original}}</p>
+    <hr />
+    <ion-row>
+      <ion-col>
+        <p class="p-0"><img class="img" src="{{filme.cartaz}}" /></p>
+      </ion-col>
+      <ion-col>
+        <p class="pt-0">{{filme.lancamento}}</p>
+        <p><img class="flag" src="assets/ban_pais/{{filme.pais.sigla}}.gif" /></p>
+        <p>{{filme.pais.pais}}</p>
+        <p>{{filme.idioma.idioma}} ({{filme.idioma.sigla}})</p>
+        <p>{{filme.distribuidor}}</p>
+        <p>{{filme.genero}}</p>
+        <p>{{filme.duracao}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <p class="p-0 align">{{filme.sinopse}}</p>
+    </ion-row>
+    <hr />
+    <ion-row>
+      <ion-col>
+        <button ion-button class="btn" (click)="goToCartaz(filme)" full color="info" clear><ion-icon name="photos"></ion-icon></button>
+      </ion-col>
+      <ion-col>
+        <button ion-button class="btn" full color="info" clear><ion-icon name="create"></ion-icon></button>
+      </ion-col>
+      <ion-col>
+        <button ion-button class="btn" full color="info" clear><ion-icon name="trash"></ion-icon></button>
+      </ion-col>
+    </ion-row>
+  
+</ion-list>
+
+</ion-content>

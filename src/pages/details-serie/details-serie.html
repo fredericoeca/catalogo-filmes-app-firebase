@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Detalhe da Série</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list class="p-1">
+
+    <h3>{{serie.serie}}</h3>
+    <p>{{serie.titulo_original}}</p>
+    <hr />
+    <ion-row>
+      <ion-col col-2>
+        <p><img class="img-flag" src="assets/ban_pais/{{serie.pais.sigla}}.gif" /></p>
+      </ion-col>
+      <ion-col col-9>
+        <p>{{serie.pais.pais}}</p>
+        <p>{{serie.idioma.idioma}} ({{serie.idioma.sigla}})</p>
+        <p>{{serie.distribuidor}}</p>
+        <p>{{serie.genero}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><p class="txt">{{serie.sinopse}}</p></ion-col>
+    </ion-row>
+
+    <ion-list>
+      <ion-list-header>
+        Temporadas <button class="btn right" (click)="goToTemporada(serie)">adicionar</button>
+      </ion-list-header>
+      <ion-item>
+        <div *ngFor="let t of serie.temporadas">
+          <ion-row>
+            <ion-col>
+              <p class="p-0"><img class="img" src="{{t.cartaz}}" /></p>
+            </ion-col>
+            <ion-col>
+              <p class="pt-0">{{t.temporada}}</p>
+              <p>{{t.lancamento}}</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <div *ngFor="let e of t.episodios">
+              <p>
+                <ion-row>
+                  <ion-col>{{e.episodio}}</ion-col>
+                  <ion-col>{{e.titulo}}</ion-col>
+                  <ion-col>{{e.data}}</ion-col>
+                  <ion-col>{{e.duracao}}</ion-col>
+                </ion-row>
+              </p>
+            </div>
+          </ion-row>
+        </div>    
+      </ion-item>
+    </ion-list>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button class="btn" full color="info" clear><ion-icon name="photos"></ion-icon></button>
+      </ion-col>
+      <ion-col>
+        <button ion-button class="btn" full color="info" clear><ion-icon name="create"></ion-icon></button>
+      </ion-col>
+      <ion-col>
+        <button ion-button class="btn" full color="info" clear><ion-icon name="trash"></ion-icon></button>
+      </ion-col>
+    </ion-row>
+  
+</ion-list>
+
+</ion-content>

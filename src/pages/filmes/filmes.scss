@@ -1,0 +1,45 @@
+page-filmes {
+
+    .toolbar-md-secondary .bar-button-clear-md, 
+    .toolbar-md-secondary .bar-button-default-md, 
+    .toolbar-md-secondary .bar-button-outline-md, 
+    .toolbar-md-secondary .toolbar-title-md {
+        color: #79CDCD;
+    }
+
+    .img {
+        width: 50px;
+    }
+
+    .btn {
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+    }
+
+    .bkg-titulo {
+        color: #79CDCD;
+        background-color: #545b62;
+    }
+
+    .card-content-md {
+        padding: 0;
+    }
+    
+    .flag {
+        width: 26px;
+        height: 16px;
+        vertical-align: middle;
+        display: unset;
+    }
+
+    .padd {
+        padding: 6px 6px;
+        text-align: center;
+    }
+
+    .lbl {
+        background-color: #e8e8e8;
+        font-size: 90%;
+    }
+}

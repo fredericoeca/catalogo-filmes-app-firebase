@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Artistas</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let a of artistas | async">
+      <ion-item>
+        <button class="btn" (click)="goToDetails(a)">
+          <h2>{{ a.nome }}</h2>
+        </button>
+        <p>{{ a.pais.pais }}</p>
+        <p>{{ a.nascimento | date:'dd/MM/yyyy' }}</p>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab (click)="goToInsertArtista()" color="info" mini>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

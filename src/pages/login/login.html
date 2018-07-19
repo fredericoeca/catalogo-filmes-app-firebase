@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Home</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <ion-list inset>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input formControlName="email" type="text"></ion-input>
+        </ion-item>
+                
+        <ion-item>
+          <ion-label floating>Senha</ion-label>
+          <ion-input formControlName="senha" type="password"></ion-input>
+        </ion-item>
+      
+        <button class="btn-login" ion-button color="info" [disabled]="!loginForm.valid" full>entrar</button>
+    </ion-list>
+  </form>
+
+</ion-content>

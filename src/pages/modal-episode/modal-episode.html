@@ -1,0 +1,34 @@
+<ion-header>
+<ion-navbar color="secondary">
+    <ion-buttons class="btn-dismiss" start>
+        <button ion-button (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
+      </ion-buttons>
+    <ion-title>Inserir Episódio</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="episodeForm" (ngSubmit)="addEpisode()">
+    <ion-list inset>
+      <ion-item class="input-left">
+        <ion-input type="text" formControlName="episodio" placeholder="Episodio"></ion-input>
+      </ion-item> 
+      <ion-item class="input-left">
+        <ion-input type="text" formControlName="titulo" placeholder="Titulo"></ion-input>
+      </ion-item>
+      <ion-item class="input-left">
+        <ion-label class="label-margin-left">Data</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY" formControlName="data"
+          cancelText=Cancelar doneText=Ok></ion-datetime>
+      </ion-item>   
+      <ion-item class="input-left">
+        <ion-input type="text" formControlName="duracao" placeholder="Duração"></ion-input>
+      </ion-item> 
+    </ion-list>
+    <ion-list class="btn-reg">
+      <button ion-button color="secondary" [disabled]="!episodeForm.valid" full>Salvar</button>
+    </ion-list>
+  </form>
+
+</ion-content>
