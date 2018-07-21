@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController, ViewController } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '../../../node_modules/@angular/forms';
 import { SeriesProvider } from '../../providers/series/series';
+import { TemporadaProvider } from '../../providers/temporada/temporada';
 
 @IonicPage()
 @Component({
@@ -22,11 +23,10 @@ export class ModalSeasonPage {
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
     public viewCtrl: ViewController,
-    public provider: SeriesProvider
+    public provider: TemporadaProvider
   ) {
     this.seasonForm = this.createSeasonForm(); 
     this.key = this.navParams.get('key');
-    console.log(this.key);   
   }
 
   createSeasonForm(){
@@ -38,12 +38,13 @@ export class ModalSeasonPage {
 
   addSeason(){
     this.showLoader();
-    let s = this.seasonForm.value;
+    let { temporada, lancamento } = this.seasonForm.value;
     this.season = {
-      'key': this.key,
-      'temporadas': s
+      'serie_key': this.key,
+      'temporada': temporada,
+      'lancamento': lancamento      
     }
-    this.provider.updateSerie(this.season).then(data => {
+    this.provider.addTemporada(this.season).then(data => {
       this.loading.dismiss();
       this.presentToast('Temporada salva com sucesso!');
       this.dismiss();

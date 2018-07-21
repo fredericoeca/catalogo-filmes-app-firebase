@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { SeriesProvider } from '../../providers/series/series';
 import { ModalSeasonPage } from '../modal-season/modal-season';
+import { TemporadaProvider } from '../../providers/temporada/temporada';
+import { Temporada } from '../../model/temporada';
+import { Observable } from '../../../node_modules/rxjs';
 
 @IonicPage()
 @Component({
@@ -11,23 +14,31 @@ import { ModalSeasonPage } from '../modal-season/modal-season';
 export class DetailsSeriePage {
 
   public serie: any;
+  public temporadas: Observable<Temporada[]>;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public provider: SeriesProvider,
+    public temporadaProvider: TemporadaProvider,
     public modalCtrl: ModalController
   ) {
-    this.serie = this.navParams.get('s');    
+    this.serie = this.navParams.get('s');   
+    this.temporadas = this.temporadaProvider.getAll()
+    .snapshotChanges()
+    .map(
+      changes => {
+        return changes.map(c => ({  
+          key: c.payload.key, ...c.payload.val()
+        }))
+      });
   }
 
   goToTemporada(serie){
     let myModal = this.modalCtrl.create(ModalSeasonPage, {
       'key': serie.key
     });
-    /*myModal.onDidDismiss(() => {        
-        
-    });*/
+    /*myModal.onDidDismiss(() => { });*/
     myModal.present();
   }
   

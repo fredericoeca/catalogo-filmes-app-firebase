@@ -39,6 +39,9 @@ import { DetailsSeriePageModule } from '../pages/details-serie/details-serie.mod
 import { DetailsSeriePage } from '../pages/details-serie/details-serie';
 import { ModalEpisodePageModule } from '../pages/modal-episode/modal-episode.module';
 import { ModalSeasonPageModule } from '../pages/modal-season/modal-season.module';
+import { ElencoProvider } from '../providers/elenco/elenco';
+import { EpisodioProvider } from '../providers/episodio/episodio';
+import { TemporadaProvider } from '../providers/temporada/temporada';
  
 // AF2 Settings
 export const firebaseConfig = {
@@ -98,7 +101,10 @@ export const firebaseConfig = {
     FilmesProvider,
     AuthProvider,
     ArtistaProvider,
-    SeriesProvider
+    SeriesProvider,
+    ElencoProvider,
+    EpisodioProvider,
+    TemporadaProvider
   ]
 })
 export class AppModule {}

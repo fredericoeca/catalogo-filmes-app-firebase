@@ -164,7 +164,9 @@ export class AuthProvider {
       { id: 27, distribuidor: 'Europa Filmes'},
       { id: 28, distribuidor: 'Imagem Filmes'},
       { id: 29, distribuidor: 'Playarte Pictures'},
-      { id: 30, distribuidor: 'Lightstar Pictures'}
+      { id: 30, distribuidor: 'Lightstar Pictures'},
+      { id: 31, distribuidor: 'Netflix' },
+      { id: 32, distribuidor: 'Warner Bros. Television Distribution' }
     ];
 
     distribuidores.sort(this.orderByDist);

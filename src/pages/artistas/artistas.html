@@ -15,8 +15,8 @@
         <button class="btn" (click)="goToDetails(a)">
           <h2>{{ a.nome }}</h2>
         </button>
-        <p>{{ a.pais.pais }}</p>
-        <p>{{ a.nascimento | date:'dd/MM/yyyy' }}</p>
+        <p class="color-txt">{{ a.pais.pais }}</p>
+        <p class="color-txt">{{ a.nascimento | date:'dd/MM/yyyy' }}</p>
       </ion-item>
     </ion-item-sliding>
   </ion-list>

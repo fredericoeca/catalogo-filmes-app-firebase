@@ -7,10 +7,29 @@ page-series {
         color: #79CDCD;
     }
 
+    .content-md{
+        color: #e8e8e8;
+        background-color: #000000;
+    }
+
+    .content-md hr {
+        background-color: #e8e8e8;
+    }
+
+    ion-item-sliding .item {
+        background-color: #000;
+        color: #e8e8e8;
+    }
+
+    .color-txt{
+        color: #e8e8e8;
+    }
+
     .btn {
         background-color: transparent;
         margin: 0;
         padding: 0;
+        color: #e8e8e8;
     }
     
 }

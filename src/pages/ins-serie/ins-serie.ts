@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '../../../node_modules/@angul
 import { Serie } from '../../model/serie';
 import { AuthProvider } from '../../providers/auth/auth';
 import { SeriesProvider } from '../../providers/series/series';
-import { DetailsSeriePage } from '../details-serie/details-serie';
+import { SeriesPage } from '../series/series';
 
 @IonicPage()
 @Component({
@@ -70,7 +70,7 @@ export class InsSeriePage {
     this.serieService.addSerie(this.serie).then( data => {
       this.loading.dismiss();
       this.presentToast('Série salvo com sucesso!');
-      this.navCtrl.push(DetailsSeriePage, { data });
+      this.navCtrl.push(SeriesPage);
     });
   }
 
