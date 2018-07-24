@@ -14,12 +14,12 @@
       <ion-item>
         <ion-row>
           <ion-col col-2>
-            <img class="img" src="{{f.cartaz}}" />
-          </ion-col>
-          <ion-col col-10>
             <button class="btn" (click)="goToDetails(f)">
-              <h2>{{ f.filme }}</h2>
+              <img class="img" src="{{f.cartaz}}" />
             </button>
+          </ion-col>
+          <ion-col col-10>            
+            <h2>{{ f.filme }}</h2>
             <p class="color-txt">{{ f.titulo_original }}</p>
             <p class="color-txt">{{ f.lancamento }}</p>
           </ion-col>

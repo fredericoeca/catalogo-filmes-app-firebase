@@ -4,6 +4,7 @@ import { Observable } from '../../../node_modules/rxjs';
 import { Artista } from '../../model/artista';
 import { ArtistaProvider } from '../../providers/artista/artista';
 import { InsArtistaPage } from '../ins-artista/ins-artista';
+import { EditArtistaPage } from '../edit-artista/edit-artista';
 
 @IonicPage()
 @Component({
@@ -27,6 +28,10 @@ export class ArtistasPage {
           key: c.payload.key, ...c.payload.val()
         }))
       });    
+  }
+
+  goToEdit(a){
+    this.navCtrl.push(EditArtistaPage, { a })
   }
 
   goToInsertArtista(){

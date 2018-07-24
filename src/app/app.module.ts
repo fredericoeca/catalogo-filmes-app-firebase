@@ -42,6 +42,8 @@ import { ModalSeasonPageModule } from '../pages/modal-season/modal-season.module
 import { ElencoProvider } from '../providers/elenco/elenco';
 import { EpisodioProvider } from '../providers/episodio/episodio';
 import { TemporadaProvider } from '../providers/temporada/temporada';
+import { EditArtistaPageModule } from '../pages/edit-artista/edit-artista.module';
+import { EditArtistaPage } from '../pages/edit-artista/edit-artista';
  
 // AF2 Settings
 export const firebaseConfig = {
@@ -77,7 +79,8 @@ export const firebaseConfig = {
     SeriesPageModule,
     DetailsSeriePageModule,
     ModalEpisodePageModule,
-    ModalSeasonPageModule
+    ModalSeasonPageModule,
+    EditArtistaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -91,7 +94,8 @@ export const firebaseConfig = {
     LoginPage,
     RegisterPage,
     SeriesPage,
-    DetailsSeriePage
+    DetailsSeriePage,
+    EditArtistaPage
   ],
   providers: [
     StatusBar,

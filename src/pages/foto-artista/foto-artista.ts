@@ -24,7 +24,7 @@ export class FotoArtistaPage {
     public toastCtrl: ToastController,
     public artistaService: ArtistaProvider
   ) {
-    console.log(this.navParams.get('key'));
+    this.key = this.navParams.get('key');
   }
 
   addImage(myphoto){

@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Editar Artista</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+
+      <ion-list inset>
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="artista.nome" placeholder="Nome"></ion-input>
+        </ion-item>
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="artista.atividade" placeholder="Atividade"></ion-input>
+        </ion-item>          
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="artista.pais.pais" placeholder="Pais"></ion-input>
+        </ion-item>            
+        <ion-item class="input-left">
+            <ion-label class="label-margin-left">Nascimento</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY"  [(ngModel)]="artista.nascimento"
+              cancelText=Cancelar doneText=Ok></ion-datetime>
+        </ion-item>
+        <ion-list class="btn-salvar">
+          <button ion-button color="secondary" (click)="editArtista(artista)" full>editar</button>
+          <button ion-button class="btn" (click)="goToFoto()" full color="secondary">Foto do Artista</button>
+        </ion-list>
+      </ion-list>
+      
+    </ion-content>

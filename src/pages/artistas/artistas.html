@@ -12,11 +12,23 @@
   <ion-list>
     <ion-item-sliding *ngFor="let a of artistas | async">
       <ion-item>
-        <button class="btn" (click)="goToDetails(a)">
-          <h2>{{ a.nome }}</h2>
-        </button>
-        <p class="color-txt">{{ a.pais.pais }}</p>
-        <p class="color-txt">{{ a.nascimento | date:'dd/MM/yyyy' }}</p>
+        <ion-row>
+          <ion-col col-3 class="align">
+            <button class="btn" (click)="goToEdit(a)">
+              <img *ngIf="a.foto" class="foto" src="{{a.foto}}" />
+              <ion-icon class="icon" *ngIf="!a.foto" name="camera"></ion-icon> 
+            </button> 
+          </ion-col>
+          <ion-col col-9>
+              <div class="right">
+                <img class="img" src="assets/ban_pais/{{a.pais.sigla}}.gif" /><br />
+              </div>
+              <h2>{{ a.nome }}</h2>
+              <p class="color-txt">{{ a.atividade }}</p>
+              <p class="color-txt">{{ a.nascimento | date:'dd/MM/yyyy' }}</p>
+              <p class="color-txt">{{ a.pais.pais }}</p>
+          </ion-col> 
+        </ion-row>           
       </ion-item>
     </ion-item-sliding>
   </ion-list>

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController, ViewController } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '../../../node_modules/@angular/forms';
-import { SeriesProvider } from '../../providers/series/series';
 import { TemporadaProvider } from '../../providers/temporada/temporada';
 
 @IonicPage()
