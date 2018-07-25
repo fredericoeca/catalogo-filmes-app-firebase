@@ -22,13 +22,13 @@ export class FilmesPage {
     private provider: FilmesProvider
   ) {
     this.filmes = this.provider.getAll()
-    .snapshotChanges()
-    .map(
-      changes => {
-        return changes.map(c => ({  
-          key: c.payload.key, ...c.payload.val()
-        }))
-      });    
+      .snapshotChanges()
+      .map(
+        changes => {
+          return changes.map(c => ({  
+            key: c.payload.key, ...c.payload.val()
+          }))
+        });    
   }
 
   goToDetails(f){

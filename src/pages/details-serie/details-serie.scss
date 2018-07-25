@@ -18,10 +18,33 @@ page-details-serie {
 
     .btn{
         background-color: transparent;
-        border-left: solid 1px #e8e8e8;
-        border-top: solid 1px #e8e8e8;
-        border-right: solid 1px #e8e8e8;
-        border-bottom: solid 1px #e8e8e8;
+        border-left: solid 1px #B5B5B5;
+        border-top: solid 1px #B5B5B5;
+        border-right: solid 1px #B5B5B5;
+        border-bottom: solid 1px #B5B5B5;
+        border-radius: 15%;
+        color: #B5B5B5;
+    }
+
+    ion-label{
+        color: #e8e8e8;
+    }
+
+    .list-header-md{
+        margin-bottom: 0;
+    }
+
+    .label-md {
+        margin: 8px 8px 8px 0;
+    }
+
+    .item-md {
+        background-color: transparent;
+        padding-right: 16px;        
+    }
+
+    .item-md p {
+        color: #e8e8e8;
     }
 
     .p-0{

@@ -31,16 +31,16 @@
 
     <ion-list>
       <ion-list-header>
-        Temporadas <button class="btn right" (click)="goToTemporada(serie)">adicionar</button>
+        Temporadas <button class="btn right" (click)="goToTemporada(serie)"><ion-icon name="add"></ion-icon></button>
       </ion-list-header>
-      <ion-item>
-        <div *ngFor="let t of temporadas">
-          <div>
+      
+      <div *ngFor="let t of temporadas | async">
+        <div *ngIf="t.serie_key === serie.key">
+          <ion-item>
             <ion-row>
-              
               <ion-col>
-                <p class="pt-0">{{t.temporada}}</p>
-                <p>{{t.lancamento}}</p>
+                <p class="pt-0">{{t.temporada}}
+                <span class="right">{{t.lancamento}}</span></p>
               </ion-col>
             </ion-row>
             <!--<ion-row>
@@ -55,23 +55,11 @@
                 </p>
               </div>
             </ion-row>-->
-          </div>
+          </ion-item>
         </div>
-      </ion-item>
+      </div>
     </ion-list>
-
-    <ion-row>
-      <ion-col>
-        <button ion-button class="btn" full color="info" clear><ion-icon name="photos"></ion-icon></button>
-      </ion-col>
-      <ion-col>
-        <button ion-button class="btn" full color="info" clear><ion-icon name="create"></ion-icon></button>
-      </ion-col>
-      <ion-col>
-        <button ion-button class="btn" full color="info" clear><ion-icon name="trash"></ion-icon></button>
-      </ion-col>
-    </ion-row>
-  
-</ion-list>
+ 
+  </ion-list>
 
 </ion-content>

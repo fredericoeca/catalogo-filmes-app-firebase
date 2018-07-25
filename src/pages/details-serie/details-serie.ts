@@ -20,18 +20,19 @@ export class DetailsSeriePage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public provider: SeriesProvider,
-    public temporadaProvider: TemporadaProvider,
+    public tProvider: TemporadaProvider,
     public modalCtrl: ModalController
   ) {
-    this.serie = this.navParams.get('s');   
-    this.temporadas = this.temporadaProvider.getAll()
-    .snapshotChanges()
-    .map(
-      changes => {
-        return changes.map(c => ({  
-          key: c.payload.key, ...c.payload.val()
-        }))
-      });
+    this.serie = this.navParams.get('s'); 
+
+    this.temporadas = this.tProvider.getAll()
+      .snapshotChanges()
+      .map(
+        changes => {
+          return changes.map(c => ({  
+            key: c.payload.key, ...c.payload.val()
+          }))
+        });
   }
 
   goToTemporada(serie){
