@@ -33,11 +33,21 @@ page-series {
         color: #e8e8e8;
     }
 
+    .align{
+        display: grid;
+        align-items: center;
+        text-align: center;
+    }
+
     .btn {
         background-color: transparent;
         margin: 0;
         padding: 0;
         color: #e8e8e8;
+    }
+
+    .icon{
+        font-size: 30px;
     }
     
 }

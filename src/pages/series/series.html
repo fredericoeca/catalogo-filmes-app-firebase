@@ -12,10 +12,18 @@
   <ion-list>
     <ion-item-sliding *ngFor="let s of series | async">
       <ion-item>
-        <button class="btn" (click)="goToDetails(s)">
-          <h2>{{ s.serie }}</h2>
-        </button>
-        <p class="color-txt">{{ s.titulo_original }}</p>
+        <ion-row>
+          <ion-col col-3 class="align">
+            <button class="btn" (click)="goToDetails(s)">
+              <img class="img" *ngIf="s.cartaz" src="{{s.cartaz}}" />
+              <ion-icon class="icon" *ngIf="!s.cartaz" name="camera"></ion-icon> 
+            </button>
+          </ion-col>
+          <ion-col col-9>            
+            <h2>{{ s.serie }}</h2>
+            <p class="color-txt">{{ s.titulo_original }}</p>
+          </ion-col>
+        </ion-row>        
       </ion-item>
     </ion-item-sliding>
   </ion-list>

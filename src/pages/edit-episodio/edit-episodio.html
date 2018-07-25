@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Editar Episódio</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list inset>
+    <ion-item class="input-left">
+      <ion-input type="text" [(ngModel)]="episodio.episodio" placeholder="Episódio"></ion-input>
+    </ion-item>
+    <ion-item class="input-left">
+      <ion-input type="text" [(ngModel)]="episodio.titulo" placeholder="Titulo"></ion-input>
+    </ion-item>
+    <ion-item class="input-left">
+        <ion-label class="label-margin-left">Data</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY"  [(ngModel)]="episodio.data"
+          cancelText=Cancelar doneText=Ok></ion-datetime>
+    </ion-item>
+    <ion-item class="input-left">
+      <ion-input type="text" [(ngModel)]="episodio.duracao" placeholder="Duração"></ion-input>
+    </ion-item>          
+    <ion-list class="btn-salvar">
+      <button ion-button color="secondary" (click)="editEpisodio(episodio)" full>editar</button>
+    </ion-list>
+  </ion-list>
+  
+</ion-content>

@@ -15,14 +15,17 @@
     <p>{{serie.titulo_original}}</p>
     <hr />
     <ion-row>
-      <ion-col col-2>
-        <p><img class="img-flag" src="assets/ban_pais/{{serie.pais.sigla}}.gif" /></p>
-      </ion-col>
-      <ion-col col-9>
+      <ion-col col-3>
+        <p class="p-0"><img class="img" src="{{serie.cartaz}}" /></p>
+      </ion-col>      
+      <ion-col col-7>
         <p>{{serie.pais.pais}}</p>
         <p>{{serie.idioma.idioma}} ({{serie.idioma.sigla}})</p>
         <p>{{serie.distribuidor}}</p>
         <p>{{serie.genero}}</p>
+      </ion-col>
+      <ion-col col-2>
+        <p class="right"><img class="img-flag" src="assets/ban_pais/{{serie.pais.sigla}}.gif" /></p>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -33,7 +36,7 @@
       <ion-list-header>
         Temporadas <button class="btn right" (click)="goToTemporada(serie)"><ion-icon name="add"></ion-icon></button>
       </ion-list-header>
-      
+
       <div *ngFor="let t of temporadas | async">
         <div *ngIf="t.serie_key === serie.key">
           <ion-item>
@@ -41,20 +44,20 @@
               <ion-col>
                 <p class="pt-0">{{t.temporada}}
                 <span class="right">{{t.lancamento}}</span></p>
+
+                <p>Episódios <button class="btn right" (click)="goToEpisodio(t)"><ion-icon name="add"></ion-icon></button></p>
+                <div *ngFor="let e of episodios | async">
+                  <p *ngIf="t.key === e.temporada_key">
+                    <ion-row>
+                      <ion-col>{{e.episodio}}</ion-col>
+                      <ion-col>{{e.titulo}}</ion-col>
+                      <ion-col>{{e.data}}</ion-col>
+                      <ion-col>{{e.duracao}}</ion-col>
+                    </ion-row>
+                  </p>
+                </div>
               </ion-col>
             </ion-row>
-            <!--<ion-row>
-              <div *ngFor="let e of t.episodios">
-                <p>
-                  <ion-row>
-                    <ion-col>{{e.episodio}}</ion-col>
-                    <ion-col>{{e.titulo}}</ion-col>
-                    <ion-col>{{e.data}}</ion-col>
-                    <ion-col>{{e.duracao}}</ion-col>
-                  </ion-row>
-                </p>
-              </div>
-            </ion-row>-->
           </ion-item>
         </div>
       </div>

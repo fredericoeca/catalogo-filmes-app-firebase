@@ -15,11 +15,11 @@ export class EpisodioProvider {
     return this.episodios;
   }
 
-  addArtista(episodio: Episodio){
+  addEpisodio(episodio: Episodio){
     return this.episodios.push(episodio);
   }
 
-  updateArtista(episodio: Episodio){
+  updateEpisodio(episodio: Episodio){
     return this.episodios.update(episodio.key, episodio);
   }
 

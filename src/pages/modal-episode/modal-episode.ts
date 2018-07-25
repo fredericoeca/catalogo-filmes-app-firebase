@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController, ViewController } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '../../../node_modules/@angular/forms';
+import { EpisodioProvider } from '../../providers/episodio/episodio';
 
 @IonicPage()
 @Component({
@@ -11,6 +12,8 @@ export class ModalEpisodePage {
 
   public episodeForm: FormGroup;
   public loading: any;
+  public tKey: any;
+  public episodio: any;
 
   constructor(
     public navCtrl: NavController, 
@@ -18,9 +21,11 @@ export class ModalEpisodePage {
     public formBuilder: FormBuilder,
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
-    public viewCtrl: ViewController
+    public viewCtrl: ViewController,
+    public eProvider: EpisodioProvider
   ) {
-    this.episodeForm = this.createEpisodeForm();    
+    this.episodeForm = this.createEpisodeForm(); 
+    this.tKey = this.navParams.get('key');
   }
 
   createEpisodeForm(){
@@ -29,6 +34,23 @@ export class ModalEpisodePage {
       titulo: ['', Validators.required],
       data: ['', Validators.required],
       duracao: ['', Validators.required]
+    })
+  }
+
+  addEpisode(){
+    this.showLoader();
+    let { episodio, titulo, data, duracao } = this.episodeForm.value;
+    this.episodio = {
+      'temporada_key': this.tKey,
+      'episodio': episodio,
+      'titulo': titulo,
+      'data': data,
+      'duracao': duracao
+    }
+    this.eProvider.addEpisodio(this.episodio).then(data => {
+      this.loading.dismiss();
+      this.presentToast('Temporada salva com sucesso!');
+      this.dismiss();
     })
   }
 

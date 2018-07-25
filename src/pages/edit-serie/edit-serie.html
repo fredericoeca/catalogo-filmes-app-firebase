@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Editar Série</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+
+      <ion-list inset>
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="serie.serie" placeholder="Série"></ion-input>
+        </ion-item>
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="serie.titulo_original" placeholder="Titulo Original"></ion-input>
+        </ion-item>          
+        <ion-item class="input-left">
+            <ion-input type="text" [(ngModel)]="serie.pais.pais" placeholder="País"></ion-input>
+            <ion-select  formControlName="idioma" interface="popover" [(ngModel)]="serie.pais">
+              <ion-option *ngFor="let p of pais">{{p.pais}} ({{p.sigla}})</ion-option>
+            </ion-select>
+        </ion-item>            
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="serie.idioma.idioma" placeholder="Idioma"></ion-input>
+          <ion-select  formControlName="idioma" interface="popover" [(ngModel)]="serie.idioma">
+            <ion-option *ngFor="let i of idiomas">{{i.idioma}} ({{i.sigla}})</ion-option>
+          </ion-select>
+        </ion-item> 
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="serie.distribuidor" placeholder="Distribuidor"></ion-input>
+        </ion-item> 
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="serie.genero" placeholder="Genero"></ion-input>
+        </ion-item> 
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="serie.sinopse" placeholder="Sinopse"></ion-input>
+        </ion-item> 
+        <ion-list class="btn-salvar">
+          <button ion-button color="secondary" (click)="editSerie(serie)" full>editar</button>
+          <button ion-button class="btn" (click)="goToCartaz()" full color="secondary">Cartaz da Série</button>
+        </ion-list>
+      </ion-list>
+      
+    </ion-content>

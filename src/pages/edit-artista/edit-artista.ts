@@ -35,7 +35,6 @@ export class EditArtistaPage {
       'nascimento': (artista.nascimento === "")? this.artista.nascimento : artista.nascimento,
       'foto': this.artista.foto
     };
-    console.log(this.a);    
     this.artistaService.updateArtista(this.a).then(data => {
       this.loading.dismiss();
       this.presentToast('Cartaz salvo com sucesso!');

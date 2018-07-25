@@ -17,8 +17,10 @@
           <ion-input type="text" [(ngModel)]="artista.atividade" placeholder="Atividade"></ion-input>
         </ion-item>          
         <ion-item class="input-left">
-          <ion-input type="text" [(ngModel)]="artista.pais.pais" placeholder="Pais"></ion-input>
-        </ion-item>            
+            <ion-select  formControlName="idioma" interface="popover" [(ngModel)]="filme.pais">
+              <ion-option *ngFor="let p of pais" [value]="p">{{p.pais}} ({{p.sigla}})</ion-option>
+            </ion-select>
+        </ion-item>              
         <ion-item class="input-left">
             <ion-label class="label-margin-left">Nascimento</ion-label>
             <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY"  [(ngModel)]="artista.nascimento"

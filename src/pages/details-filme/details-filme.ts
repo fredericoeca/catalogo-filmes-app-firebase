@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FilmesProvider } from '../../providers/filmes/filmes';
-import { CartazFilmePage } from '../cartaz-filme/cartaz-filme';
+import { EditFilmePage } from '../edit-filme/edit-filme';
 
 @IonicPage()
 @Component({
@@ -20,10 +20,8 @@ export class DetailsFilmePage {
     this.filme = this.navParams.get('f');
   }
 
-  goToCartaz(filme){
-    this.navCtrl.push(CartazFilmePage, {
-      'key': filme.key
-    })
+  goToEditar(filme){
+    this.navCtrl.push(EditFilmePage, { filme })
   }
 
 }

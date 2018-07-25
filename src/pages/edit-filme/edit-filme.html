@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Editar Filme</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+
+      <ion-list inset>
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="filme.filme" placeholder="Filme"></ion-input>
+        </ion-item>
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="filme.titulo_original" placeholder="Titulo Original"></ion-input>
+        </ion-item> 
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="filme.lancamento" placeholder="Lançamento"></ion-input>
+        </ion-item>          
+        <ion-item class="input-left">
+            <ion-select  formControlName="idioma" interface="popover" [(ngModel)]="filme.pais">
+              <ion-option *ngFor="let p of pais" [value]="p">{{p.pais}} ({{p.sigla}})</ion-option>
+            </ion-select>
+        </ion-item>            
+        <ion-item class="input-left">
+          <ion-select  formControlName="idioma" interface="popover" [(ngModel)]="filme.idioma">
+            <ion-option *ngFor="let i of idiomas" [value]="i">{{i.idioma}} ({{i.sigla}})</ion-option>
+          </ion-select>
+        </ion-item> 
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="filme.distribuidor" placeholder="Distribuidor"></ion-input>
+        </ion-item> 
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="filme.genero" placeholder="Genero"></ion-input>
+        </ion-item> 
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="filme.sinopse" placeholder="Sinopse"></ion-input>
+        </ion-item>
+        <ion-item class="input-left">
+          <ion-input type="text" [(ngModel)]="filme.duracao" placeholder="Duração"></ion-input>
+        </ion-item>
+        <ion-list class="btn-salvar">
+          <button ion-button color="secondary" (click)="editFilme(filme)" full>editar</button>
+          <button ion-button class="btn" (click)="goToCartaz()" full color="secondary">Cartaz da Filme</button>
+        </ion-list>
+      </ion-list>
+      
+    </ion-content>

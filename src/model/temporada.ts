@@ -3,5 +3,4 @@ export interface Temporada {
     serie_key: string;
     temporada: string;
     lancamento: string;
-    cartaz: string;
 };

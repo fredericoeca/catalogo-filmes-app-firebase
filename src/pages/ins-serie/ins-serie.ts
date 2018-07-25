@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '../../../node_modules/@angul
 import { Serie } from '../../model/serie';
 import { AuthProvider } from '../../providers/auth/auth';
 import { SeriesProvider } from '../../providers/series/series';
-import { SeriesPage } from '../series/series';
+import { CartazSeriePage } from '../cartaz-serie/cartaz-serie';
 
 @IonicPage()
 @Component({
@@ -69,8 +69,8 @@ export class InsSeriePage {
     this.serie = this.inserirSerieForm.value;
     this.serieService.addSerie(this.serie).then( data => {
       this.loading.dismiss();
-      this.presentToast('Série salvo com sucesso!');
-      this.navCtrl.push(SeriesPage);
+      this.presentToast('Série salva com sucesso!');
+      this.navCtrl.push(CartazSeriePage);
     });
   }
 

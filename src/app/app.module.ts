@@ -44,6 +44,12 @@ import { EpisodioProvider } from '../providers/episodio/episodio';
 import { TemporadaProvider } from '../providers/temporada/temporada';
 import { EditArtistaPageModule } from '../pages/edit-artista/edit-artista.module';
 import { EditArtistaPage } from '../pages/edit-artista/edit-artista';
+import { EditSeriePage } from '../pages/edit-serie/edit-serie';
+import { EditSeriePageModule } from '../pages/edit-serie/edit-serie.module';
+import { EditTemporadaPageModule } from '../pages/edit-temporada/edit-temporada.module';
+import { EditEpisodioPageModule } from '../pages/edit-episodio/edit-episodio.module';
+import { EditTemporadaPage } from '../pages/edit-temporada/edit-temporada';
+import { EditEpisodioPage } from '../pages/edit-episodio/edit-episodio';
  
 // AF2 Settings
 export const firebaseConfig = {
@@ -80,7 +86,10 @@ export const firebaseConfig = {
     DetailsSeriePageModule,
     ModalEpisodePageModule,
     ModalSeasonPageModule,
-    EditArtistaPageModule
+    EditArtistaPageModule,
+    EditSeriePageModule,
+    EditTemporadaPageModule,
+    EditEpisodioPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -95,7 +104,10 @@ export const firebaseConfig = {
     RegisterPage,
     SeriesPage,
     DetailsSeriePage,
-    EditArtistaPage
+    EditArtistaPage,
+    EditSeriePage,
+    EditTemporadaPage,
+    EditEpisodioPage
   ],
   providers: [
     StatusBar,

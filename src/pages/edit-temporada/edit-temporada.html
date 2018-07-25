@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Editar Temporada</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list inset>
+    <ion-item class="input-left">
+      <ion-input type="text" [(ngModel)]="temporada.temporada" placeholder="Série"></ion-input>
+    </ion-item>
+    <ion-item class="input-left">
+      <ion-input type="text" [(ngModel)]="temporada.lancamento" placeholder="Titulo Original"></ion-input>
+    </ion-item>          
+    <ion-list class="btn-salvar">
+      <button ion-button color="secondary" (click)="editTemporada(temporada)" full>editar</button>
+      <button ion-button class="btn" (click)="goToCartaz()" full color="secondary">Cartaz da Temporada</button>
+    </ion-list>
+  </ion-list>
+  
+</ion-content>

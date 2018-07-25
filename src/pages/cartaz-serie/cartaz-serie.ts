@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { Camera, CameraOptions } from '../../../node_modules/@ionic-native/camera';
 import { SeriesProvider } from '../../providers/series/series';
-import { DetailsSeriePage } from '../details-serie/details-serie';
+import { SeriesPage } from '../series/series';
 
 @IonicPage()
 @Component({
@@ -26,22 +26,18 @@ export class CartazSeriePage {
     public serieService: SeriesProvider
   ) {
     this.key = this.navParams.get('key');
-    this.keySeason = this.navParams.get('key_season');
   }
 
   addImage(myphoto){
     this.showLoader();
     this.serie = {
       'key': this.key,
-      'temporadas.key': this.keySeason,
       'cartaz': myphoto
     };
     this.serieService.updateSerie(this.serie).then(data => {
       this.loading.dismiss();
       this.presentToast('Cartaz salvo com sucesso!');
-      this.navCtrl.push(DetailsSeriePage, {
-        'key': this.key
-      });
+      this.navCtrl.setRoot(SeriesPage);
     });
   }
 
