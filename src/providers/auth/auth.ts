@@ -16,7 +16,7 @@ export class AuthProvider {
 
   getPais(){
 
-    let paises = [
+    let paises = [  
       { id: 1, pais: 'Argentina', sigla:	'ARG'},
       { id: 2, pais: 'Austrália', sigla:	'AUS'},
       { id: 3, pais: 'Austria', sigla:	'AUT'},
@@ -33,7 +33,7 @@ export class AuthProvider {
       { id: 14, pais: 'Espanha', sigla:	'ESP'},
       { id: 15, pais: 'Finlândia', sigla:	'FIN'},
       { id: 16, pais: 'França', sigla:	'FRA'},
-      { id: 17, pais: 'Grã Bretanha', sigla:	'GBR'},
+      { id: 17, pais: 'Inglaterra', sigla:	'GBR'},
       { id: 18, pais: 'Alemanha', sigla:	'GER'},
       { id: 19, pais: 'Grécia', sigla:	'GRE'},
       { id: 20, pais: 'Hong Kong', sigla:	'HKG'},

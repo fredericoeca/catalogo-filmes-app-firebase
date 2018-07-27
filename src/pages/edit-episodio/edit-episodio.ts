@@ -32,7 +32,6 @@ export class EditEpisodioPage {
       'temporada_key': this.episodio.temporada_key,
       'episodio': episodio.episodio,
       'titulo': episodio.titulo,
-      'data': episodio.data,
       'duracao': episodio.duracao
     };
     console.log(this.e);

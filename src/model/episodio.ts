@@ -3,6 +3,5 @@ export interface Episodio {
     temporada_key: string;
     episodio: string;
     titulo: string;
-    data: Date;
     duracao: string;
 }

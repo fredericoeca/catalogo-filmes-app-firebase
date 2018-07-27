@@ -28,7 +28,7 @@ export class EditSeriePage {
     public sProvider: SeriesProvider,
     public authService: AuthProvider
   ) {
-    this.serie = this.navParams.get('s');
+    this.serie = this.navParams.get('serie');
     this.paises = this.authService.getPais();
     this.idiomas = this.authService.getIdiomas();
   }
@@ -39,13 +39,14 @@ export class EditSeriePage {
       'key': this.serie.key,
       'serie': serie.serie,
       'titulo_original': serie.titulo_original,
-      'pais': serie.pais,
-      'idioma': serie.idioma,
+      'pais': (serie.pais === '')? this.serie.pais : serie.pais,
+      'idioma': (serie.idioma === '')? this.serie.idioma : serie.idioma,
       'distribuidor': serie.distribuidor,
       'genero': serie.genero,
       'sinopse': serie.sinopse,
       'cartaz': this.serie.cartaz
     };
+    console.log(this.s);
     this.sProvider.updateSerie(this.s).then(data => {
       this.loading.dismiss();
       this.presentToast('Série editada com sucesso!');

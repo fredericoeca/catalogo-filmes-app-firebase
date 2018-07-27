@@ -18,10 +18,10 @@ page-details-serie {
 
     .btn{
         background-color: transparent;
-        border-left: solid 1px #B5B5B5;
-        border-top: solid 1px #B5B5B5;
-        border-right: solid 1px #B5B5B5;
-        border-bottom: solid 1px #B5B5B5;
+        //border-left: solid 1px #B5B5B5;
+        //border-top: solid 1px #B5B5B5;
+        //border-right: solid 1px #B5B5B5;
+        //border-bottom: solid 1px #B5B5B5;
         border-radius: 15%;
         color: #B5B5B5;
     }
@@ -45,6 +45,12 @@ page-details-serie {
 
     .item-md p {
         color: #e8e8e8;
+    }
+
+    .align-ct{
+        display: grid;
+        align-items: center;
+        text-align: center;
     }
 
     .p-0{
@@ -76,4 +82,20 @@ page-details-serie {
         margin: 0;
     }
 
+    .list-md .item-block .item-inner {
+        border-bottom: 1px solid #696969;
+    }
+
+    .eps{
+        padding: 0;
+        font-size: 12px;
+    }
+
+    .m-1{
+        margin: 8px 0;
+    }
+
+    .color-hr{
+        background-color: #b5b5b5;
+    }
 }

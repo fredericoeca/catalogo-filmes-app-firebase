@@ -20,7 +20,7 @@
       </ion-col>
       <ion-col>
         <p class="pt-0">{{filme.lancamento}}</p>
-        <p><img class="flag" src="assets/ban_pais/{{filme.pais.sigla}}.gif" /></p>
+        <p><img class="flag" src="assets/ban_pais/{{filme.pais.sigla}}.png" /></p>
         <p>{{filme.pais.pais}}</p>
         <p>{{filme.idioma.idioma}} ({{filme.idioma.sigla}})</p>
         <p>{{filme.distribuidor}}</p>
@@ -32,12 +32,12 @@
       <p class="p-0 align">{{filme.sinopse}}</p>
     </ion-row>
     <hr class="color-line" />
-    <ion-row>
-      <ion-col>
-        <button ion-button class="btn" (click)="goToEditar(filme)" full color="info" clear><ion-icon name="photos"></ion-icon></button>
-      </ion-col>
-    </ion-row>
-  
 </ion-list>
+
+<ion-fab top right edge>
+  <button ion-fab (click)="goToEditar(filme)" color="secondary" mini>
+    <ion-icon name="create"></ion-icon>
+  </button>
+</ion-fab>
 
 </ion-content>

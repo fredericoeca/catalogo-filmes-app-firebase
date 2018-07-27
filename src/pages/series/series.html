@@ -15,8 +15,7 @@
         <ion-row>
           <ion-col col-3 class="align">
             <button class="btn" (click)="goToDetails(s)">
-              <img class="img" *ngIf="s.cartaz" src="{{s.cartaz}}" />
-              <ion-icon class="icon" *ngIf="!s.cartaz" name="camera"></ion-icon> 
+              <img class="img" src="{{s.cartaz}}" />
             </button>
           </ion-col>
           <ion-col col-9>            
@@ -28,8 +27,8 @@
     </ion-item-sliding>
   </ion-list>
 
-  <ion-fab right bottom>
-    <button ion-fab (click)="goToInsertSerie()" color="info" mini>
+  <ion-fab top right edge>
+    <button ion-fab (click)="goToInsertSerie()" color="secondary" mini>
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>

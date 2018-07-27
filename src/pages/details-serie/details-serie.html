@@ -13,10 +13,11 @@
 
     <h3>{{serie.serie}}</h3>
     <p>{{serie.titulo_original}}</p>
-    <hr />
+    <hr class="color-hr" />
     <ion-row>
       <ion-col col-3>
-        <p class="p-0"><img class="img" src="{{serie.cartaz}}" /></p>
+        <img class="img" *ngIf="serie.cartaz" src="{{serie.cartaz}}" />
+        <ion-icon class="icon align-ct" *ngIf="!serie.cartaz" name="camera"></ion-icon> 
       </ion-col>      
       <ion-col col-7>
         <p>{{serie.pais.pais}}</p>
@@ -25,7 +26,7 @@
         <p>{{serie.genero}}</p>
       </ion-col>
       <ion-col col-2>
-        <p class="right"><img class="img-flag" src="assets/ban_pais/{{serie.pais.sigla}}.gif" /></p>
+        <p class="right"><img class="flag" src="assets/ban_pais/{{serie.pais.sigla}}.png" /></p>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -34,7 +35,7 @@
 
     <ion-list>
       <ion-list-header>
-        Temporadas <button class="btn right" (click)="goToTemporada(serie)"><ion-icon name="add"></ion-icon></button>
+        Temporadas <button class="btn right" (click)="goToTemporada(serie)">adicionar</button>
       </ion-list-header>
 
       <div *ngFor="let t of temporadas | async">
@@ -43,19 +44,21 @@
             <ion-row>
               <ion-col>
                 <p class="pt-0">{{t.temporada}}
-                <span class="right">{{t.lancamento}}</span></p>
-
-                <p>Episódios <button class="btn right" (click)="goToEpisodio(t)"><ion-icon name="add"></ion-icon></button></p>
-                <div *ngFor="let e of episodios | async">
-                  <p *ngIf="t.key === e.temporada_key">
-                    <ion-row>
-                      <ion-col>{{e.episodio}}</ion-col>
-                      <ion-col>{{e.titulo}}</ion-col>
-                      <ion-col>{{e.data}}</ion-col>
-                      <ion-col>{{e.duracao}}</ion-col>
-                    </ion-row>
-                  </p>
-                </div>
+                <span class="right">{{t.lancamento}}</span></p>        
+                  <div *ngFor="let e of episodios | async">
+                    <p *ngIf="t.key === e.temporada_key">
+                      <ion-item class="eps">
+                        <ion-row>
+                          <ion-col col-2>{{e.episodio}}</ion-col>
+                          <ion-col col-8>{{e.titulo}}</ion-col>
+                          <ion-col col-2><span class="right">{{e.duracao}}</span></ion-col>
+                        </ion-row>
+                      </ion-item>
+                    </p>
+                  </div> 
+                <div class="m-1">
+                  <button class="btn right" (click)="goToEpisodio(t)">adicionar episódio</button>
+                </div>                                       
               </ion-col>
             </ion-row>
           </ion-item>
@@ -64,5 +67,11 @@
     </ion-list>
  
   </ion-list>
+
+  <ion-fab top right edge>
+    <button ion-fab (click)="goToEditSerie(serie)" color="secondary" mini>
+      <ion-icon name="create"></ion-icon>
+    </button>
+  </ion-fab>
 
 </ion-content>

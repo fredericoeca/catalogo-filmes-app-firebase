@@ -15,13 +15,12 @@
         <ion-row>
           <ion-col col-3 class="align">
             <button class="btn" (click)="goToEdit(a)">
-              <img *ngIf="a.foto" class="foto" src="{{a.foto}}" />
-              <ion-icon class="icon" *ngIf="!a.foto" name="camera"></ion-icon> 
+              <img class="foto" src="{{a.foto}}" />
             </button> 
           </ion-col>
           <ion-col col-9>
               <div class="right">
-                <img class="img" src="assets/ban_pais/{{a.pais.sigla}}.gif" /><br />
+                <img class="img" src="assets/ban_pais/{{a.pais.sigla}}.png" /><br />
               </div>
               <h2>{{ a.nome }}</h2>
               <p class="color-txt">{{ a.atividade }}</p>
@@ -33,8 +32,8 @@
     </ion-item-sliding>
   </ion-list>
 
-  <ion-fab right bottom>
-    <button ion-fab (click)="goToInsertArtista()" color="info" mini>
+  <ion-fab top right edge>
+    <button ion-fab (click)="goToInsertArtista()" color="secondary" mini>
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>

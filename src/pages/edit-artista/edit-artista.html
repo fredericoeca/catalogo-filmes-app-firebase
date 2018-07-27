@@ -17,8 +17,9 @@
           <ion-input type="text" [(ngModel)]="artista.atividade" placeholder="Atividade"></ion-input>
         </ion-item>          
         <ion-item class="input-left">
-            <ion-select  formControlName="idioma" interface="popover" [(ngModel)]="filme.pais">
-              <ion-option *ngFor="let p of pais" [value]="p">{{p.pais}} ({{p.sigla}})</ion-option>
+            <ion-label class="label-margin-left">País</ion-label>
+            <ion-select  interface="popover" [(ngModel)]="artista.pais">
+              <ion-option *ngFor="let p of paises" [value] = "p">{{p.pais}}</ion-option>
             </ion-select>
         </ion-item>              
         <ion-item class="input-left">

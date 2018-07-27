@@ -32,19 +32,17 @@ export class ModalEpisodePage {
     return this.formBuilder.group({
       episodio: ['', Validators.required],
       titulo: ['', Validators.required],
-      data: ['', Validators.required],
       duracao: ['', Validators.required]
     })
   }
 
   addEpisode(){
     this.showLoader();
-    let { episodio, titulo, data, duracao } = this.episodeForm.value;
+    let { episodio, titulo, duracao } = this.episodeForm.value;
     this.episodio = {
       'temporada_key': this.tKey,
       'episodio': episodio,
       'titulo': titulo,
-      'data': data,
       'duracao': duracao
     }
     this.eProvider.addEpisodio(this.episodio).then(data => {

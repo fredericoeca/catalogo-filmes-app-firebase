@@ -4,6 +4,7 @@ import { ArtistaProvider } from '../../providers/artista/artista';
 import { ArtistasPage } from '../artistas/artistas';
 import { FotoArtistaPage } from '../foto-artista/foto-artista';
 import { Artista } from '../../model/artista';
+import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
 @Component({
@@ -11,18 +12,22 @@ import { Artista } from '../../model/artista';
   templateUrl: 'edit-artista.html',
 })
 export class EditArtistaPage {
+
   public artista: Artista;
   public loading: any;
   public a: Artista;
+  public paises: any;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public artistaService: ArtistaProvider,
     public loadingCtrl: LoadingController,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    public auth: AuthProvider
   ) {
-    this.artista = this.navParams.get('a');    
+    this.artista = this.navParams.get('a'); 
+    this.paises = this.auth.getPais();
   }
 
   editArtista(artista){
@@ -31,7 +36,7 @@ export class EditArtistaPage {
       'key': this.artista.key,
       'nome': artista.nome,
       'atividade': artista.atividade,
-      'pais': artista.pais,
+      'pais': (artista.pais === '')? this.artista.pais : artista.pais,
       'nascimento': (artista.nascimento === "")? this.artista.nascimento : artista.nascimento,
       'foto': this.artista.foto
     };

@@ -40,15 +40,14 @@ export class EditFilmePage {
       'filme': filme.filme,
       'titulo_original': filme.titulo_original,
       'lancamento': filme.lancamento,
-      'pais': filme.pais,
-      'idioma': filme.idioma,
+      'pais': (filme.pais === '')? this.filme.pais : filme.pais,
+      'idioma': (filme.idioma === '')? this.filme.idioma : filme.idioma,
       'distribuidor': filme.distribuidor,
       'genero': filme.genero,
       'sinopse': filme.sinopse,
       'duracao': filme.duracao,
       'cartaz': this.filme.cartaz
     };
-    console.log(this.f);
     this.fProvider.updateFilme(this.f).then(data => {
       this.loading.dismiss();
       this.presentToast('Filme editada com sucesso!');

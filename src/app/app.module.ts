@@ -50,6 +50,10 @@ import { EditTemporadaPageModule } from '../pages/edit-temporada/edit-temporada.
 import { EditEpisodioPageModule } from '../pages/edit-episodio/edit-episodio.module';
 import { EditTemporadaPage } from '../pages/edit-temporada/edit-temporada';
 import { EditEpisodioPage } from '../pages/edit-episodio/edit-episodio';
+import { EditFilmePage } from '../pages/edit-filme/edit-filme';
+import { EditFilmePageModule } from '../pages/edit-filme/edit-filme.module';
+import { CartazSeriePage } from '../pages/cartaz-serie/cartaz-serie';
+import { CartazSeriePageModule } from '../pages/cartaz-serie/cartaz-serie.module';
  
 // AF2 Settings
 export const firebaseConfig = {
@@ -89,7 +93,9 @@ export const firebaseConfig = {
     EditArtistaPageModule,
     EditSeriePageModule,
     EditTemporadaPageModule,
-    EditEpisodioPageModule
+    EditEpisodioPageModule,
+    EditFilmePageModule,
+    CartazSeriePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -107,7 +113,9 @@ export const firebaseConfig = {
     EditArtistaPage,
     EditSeriePage,
     EditTemporadaPage,
-    EditEpisodioPage
+    EditEpisodioPage,
+    EditFilmePage,
+    CartazSeriePage
   ],
   providers: [
     StatusBar,

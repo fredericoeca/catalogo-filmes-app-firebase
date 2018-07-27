@@ -21,7 +21,7 @@ export class DetailsFilmePage {
   }
 
   goToEditar(filme){
-    this.navCtrl.push(EditFilmePage, { filme })
+    this.navCtrl.push(EditFilmePage, { filme });
   }
 
 }

@@ -20,14 +20,16 @@
           <ion-input type="text" [(ngModel)]="filme.lancamento" placeholder="Lançamento"></ion-input>
         </ion-item>          
         <ion-item class="input-left">
-            <ion-select  formControlName="idioma" interface="popover" [(ngModel)]="filme.pais">
-              <ion-option *ngFor="let p of pais" [value]="p">{{p.pais}} ({{p.sigla}})</ion-option>
+            <ion-label class="label-margin-left">País</ion-label>
+            <ion-select  interface="popover" [(ngModel)]="filme.pais">
+              <ion-option *ngFor="let p of paises" [value] = "p">{{p.pais}}</ion-option>
             </ion-select>
         </ion-item>            
         <ion-item class="input-left">
-          <ion-select  formControlName="idioma" interface="popover" [(ngModel)]="filme.idioma">
-            <ion-option *ngFor="let i of idiomas" [value]="i">{{i.idioma}} ({{i.sigla}})</ion-option>
-          </ion-select>
+            <ion-label class="label-margin-left">Idiomas</ion-label>
+            <ion-select  interface="popover" [(ngModel)]="filme.idioma">
+              <ion-option *ngFor="let i of idiomas" [value] = "i">{{i.idioma}}</ion-option>
+            </ion-select>
         </ion-item> 
         <ion-item class="input-left">
           <ion-input type="text" [(ngModel)]="filme.distribuidor" placeholder="Distribuidor"></ion-input>

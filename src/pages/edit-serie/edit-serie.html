@@ -17,17 +17,17 @@
           <ion-input type="text" [(ngModel)]="serie.titulo_original" placeholder="Titulo Original"></ion-input>
         </ion-item>          
         <ion-item class="input-left">
-            <ion-input type="text" [(ngModel)]="serie.pais.pais" placeholder="País"></ion-input>
-            <ion-select  formControlName="idioma" interface="popover" [(ngModel)]="serie.pais">
-              <ion-option *ngFor="let p of pais">{{p.pais}} ({{p.sigla}})</ion-option>
+            <ion-label class="label-margin-left">País</ion-label>
+            <ion-select  interface="popover" [(ngModel)]="serie.pais">
+              <ion-option *ngFor="let p of paises" [value] = "p">{{p.pais}}</ion-option>
             </ion-select>
         </ion-item>            
         <ion-item class="input-left">
-          <ion-input type="text" [(ngModel)]="serie.idioma.idioma" placeholder="Idioma"></ion-input>
-          <ion-select  formControlName="idioma" interface="popover" [(ngModel)]="serie.idioma">
-            <ion-option *ngFor="let i of idiomas">{{i.idioma}} ({{i.sigla}})</ion-option>
-          </ion-select>
-        </ion-item> 
+            <ion-label class="label-margin-left">Idiomas</ion-label>
+            <ion-select  interface="popover" [(ngModel)]="serie.idioma">
+              <ion-option *ngFor="let i of idiomas" [value] = "i">{{i.idioma}}</ion-option>
+            </ion-select>
+        </ion-item>  
         <ion-item class="input-left">
           <ion-input type="text" [(ngModel)]="serie.distribuidor" placeholder="Distribuidor"></ion-input>
         </ion-item> 

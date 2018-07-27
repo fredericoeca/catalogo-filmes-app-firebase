@@ -10,6 +10,7 @@ import { EpisodioProvider } from '../../providers/episodio/episodio';
 import { ModalEpisodePage } from '../modal-episode/modal-episode';
 import { EditTemporadaPage } from '../edit-temporada/edit-temporada';
 import { EditEpisodioPage } from '../edit-episodio/edit-episodio';
+import { EditSeriePage } from '../edit-serie/edit-serie';
 
 @IonicPage()
 @Component({
@@ -49,6 +50,10 @@ export class DetailsSeriePage {
             key: c.payload.key, ...c.payload.val()
           }))
         });
+  }
+
+  goToEditSerie(serie){
+    this.navCtrl.push(EditSeriePage, { serie });
   }
 
   goToEpisodio(t){
