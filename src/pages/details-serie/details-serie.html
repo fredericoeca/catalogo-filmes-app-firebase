@@ -15,17 +15,16 @@
     <p>{{serie.titulo_original}}</p>
     <hr class="color-hr" />
     <ion-row>
-      <ion-col col-3>
-        <img class="img" *ngIf="serie.cartaz" src="{{serie.cartaz}}" />
-        <ion-icon class="icon align-ct" *ngIf="!serie.cartaz" name="camera"></ion-icon> 
+      <ion-col>
+        <img class="img" src="{{serie.cartaz}}" />
       </ion-col>      
-      <ion-col col-7>
+      <ion-col>
         <p>{{serie.pais.pais}}</p>
         <p>{{serie.idioma.idioma}} ({{serie.idioma.sigla}})</p>
         <p>{{serie.distribuidor}}</p>
         <p>{{serie.genero}}</p>
       </ion-col>
-      <ion-col col-2>
+      <ion-col>
         <p class="right"><img class="flag" src="assets/ban_pais/{{serie.pais.sigla}}.png" /></p>
       </ion-col>
     </ion-row>
@@ -43,13 +42,13 @@
           <ion-item>
             <ion-row>
               <ion-col>
-                <p class="pt-0">{{t.temporada}}
+                <p class="pt-0"><button class="btn" (click)="goToEditTemporada(t)">{{t.temporada}}</button>
                 <span class="right">{{t.lancamento}}</span></p>        
                   <div *ngFor="let e of episodios | async">
                     <p *ngIf="t.key === e.temporada_key">
                       <ion-item class="eps">
                         <ion-row>
-                          <ion-col col-2>{{e.episodio}}</ion-col>
+                          <ion-col col-2><button class="btn" (click)="goToEditEpisodio(e)">{{e.episodio}}</button></ion-col>
                           <ion-col col-8>{{e.titulo}}</ion-col>
                           <ion-col col-2><span class="right">{{e.duracao}}</span></ion-col>
                         </ion-row>

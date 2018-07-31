@@ -1,3 +1,61 @@
 page-edit-episodio {
 
+    .toolbar-md-secondary .bar-button-clear-md, 
+    .toolbar-md-secondary .bar-button-default-md, 
+    .toolbar-md-secondary .bar-button-outline-md, 
+    .toolbar-md-secondary .toolbar-title-md {
+        color: #79CDCD;
+    }
+
+    .content-md{
+        color: #e8e8e8;
+        background-color: #000000;
+    }
+
+    .item-md{
+        color: #e8e8e8;
+        background-color: transparent;
+    }
+
+    .card-content-md {
+        padding: 0;
+    }
+    
+    .lbl {
+        background-color: #e8e8e8;
+        font-size: 90%;
+    }
+
+    .input-left{
+        padding-left: 0;
+    }
+
+    .label-margin-left{
+        margin-left: 8px;
+    }
+
+    .btn-salvar{
+        margin-top: 2rem;
+    }
+
+    .btn-reg{
+        margin: 16px;
+    }
+
+    .input-left {
+        padding-left: 0;
+    }
+
+    .btn-edit{
+        margin-top: 2rem;
+    }
+
+    .label-margin-left {
+        margin: 13px 8px;
+    }
+
+    .btn-dismiss {
+        margin: 0 1rem;
+    }
+
 }

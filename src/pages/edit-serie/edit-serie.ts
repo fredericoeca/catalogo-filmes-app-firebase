@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, ViewController } from 'ionic-angular';
 import { Serie } from '../../model/serie';
 import { SeriesProvider } from '../../providers/series/series';
 import { CartazSeriePage } from '../cartaz-serie/cartaz-serie';
@@ -26,7 +26,8 @@ export class EditSeriePage {
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
     public sProvider: SeriesProvider,
-    public authService: AuthProvider
+    public authService: AuthProvider,
+    public viewCtrl: ViewController
   ) {
     this.serie = this.navParams.get('serie');
     this.paises = this.authService.getPais();
@@ -83,4 +84,7 @@ export class EditSeriePage {
     toast.present();
   }
 
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
 }

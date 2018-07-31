@@ -28,7 +28,7 @@ export class FilmesPage {
           return changes.map(c => ({  
             key: c.payload.key, ...c.payload.val()
           }))
-        });    
+        });   
   }
 
   goToDetails(f){

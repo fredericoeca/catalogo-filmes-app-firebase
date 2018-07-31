@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-buttons class="btn-dismiss" start>
+        <button ion-button (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
+      </ion-buttons>
+    <ion-title>Adicionar Artista</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list inset>
+    <ion-item class="input-left">
+        <ion-label class="label-margin-left">Artista</ion-label>
+        <ion-select  interface="popover"[(ngModel)]="elenco.artista_key">
+          <ion-option *ngFor="let a of artistas | async" [value] = "a.key">{{a.nome}}</ion-option>
+        </ion-select>
+    </ion-item>  
+    <ion-item class="input-left">
+      <ion-input type="text" [(ngModel)]="elenco.atividade" placeholder="Atividade"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list class="btn-reg">
+    <button ion-button color="secondary" (click)="addElenco(elenco)" full>Salvar</button>
+  </ion-list>
+
+</ion-content>
+  

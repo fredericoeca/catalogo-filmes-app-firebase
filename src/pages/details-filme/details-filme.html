@@ -28,8 +28,14 @@
         <p>{{filme.duracao}}</p>
       </ion-col>
     </ion-row>
+
     <ion-row>
       <p class="p-0 align">{{filme.sinopse}}</p>
+    </ion-row>
+    <hr class="color-line" />
+
+    <ion-row>
+      <p class="p-0"><button class="btn right" (click)="goToElenco(filme)">artista</button></p>
     </ion-row>
     <hr class="color-line" />
 </ion-list>

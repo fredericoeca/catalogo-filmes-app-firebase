@@ -15,11 +15,11 @@ export class ElencoProvider {
     return this.elenco;
   }
 
-  addArtista(e: Elenco){
+  addElenco(e: Elenco){
     return this.elenco.push(e);
   }
 
-  updateArtista(e: Elenco){
+  updateElenco(e: Elenco){
     return this.elenco.update(e.key, e);
   }
 

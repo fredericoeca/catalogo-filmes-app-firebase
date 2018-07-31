@@ -47,7 +47,7 @@ export class ModalEpisodePage {
     }
     this.eProvider.addEpisodio(this.episodio).then(data => {
       this.loading.dismiss();
-      this.presentToast('Temporada salva com sucesso!');
+      this.presentToast('Episódio salvo com sucesso!');
       this.dismiss();
     })
   }

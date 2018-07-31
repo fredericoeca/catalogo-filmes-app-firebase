@@ -54,6 +54,8 @@ import { EditFilmePage } from '../pages/edit-filme/edit-filme';
 import { EditFilmePageModule } from '../pages/edit-filme/edit-filme.module';
 import { CartazSeriePage } from '../pages/cartaz-serie/cartaz-serie';
 import { CartazSeriePageModule } from '../pages/cartaz-serie/cartaz-serie.module';
+import { ElencoPageModule } from '../pages/elenco/elenco.module';
+import { ElencoPage } from '../pages/elenco/elenco';
  
 // AF2 Settings
 export const firebaseConfig = {
@@ -95,7 +97,8 @@ export const firebaseConfig = {
     EditTemporadaPageModule,
     EditEpisodioPageModule,
     EditFilmePageModule,
-    CartazSeriePageModule
+    CartazSeriePageModule,
+    ElencoPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -115,7 +118,8 @@ export const firebaseConfig = {
     EditTemporadaPage,
     EditEpisodioPage,
     EditFilmePage,
-    CartazSeriePage
+    CartazSeriePage,
+    ElencoPage
   ],
   providers: [
     StatusBar,

@@ -17,10 +17,13 @@
             <button class="btn" (click)="goToDetails(s)">
               <img class="img" src="{{s.cartaz}}" />
             </button>
-          </ion-col>
+          </ion-col>  
           <ion-col col-9>            
             <h2>{{ s.serie }}</h2>
             <p class="color-txt">{{ s.titulo_original }}</p>
+            <img class="flag" src="assets/ban_pais/{{s.pais.sigla}}.png" />
+            <p class="color-txt">{{ s.distribuidor }}</p>            
+            <p class="color-txt">{{ s.genero }}</p>
           </ion-col>
         </ion-row>        
       </ion-item>

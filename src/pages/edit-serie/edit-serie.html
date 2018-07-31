@@ -1,12 +1,12 @@
 <ion-header>
-    <ion-navbar color="secondary">
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
+  <ion-navbar color="secondary">
+      <ion-buttons class="btn-dismiss" start>
+          <button ion-button (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
+        </ion-buttons>
       <ion-title>Editar Série</ion-title>
     </ion-navbar>
   </ion-header>
-  
+
   <ion-content padding>
 
       <ion-list inset>

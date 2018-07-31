@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, ViewController } from 'ionic-angular';
 import { Filme } from '../../model/filme';
 import { AuthProvider } from '../../providers/auth/auth';
 import { FilmesProvider } from '../../providers/filmes/filmes';
@@ -26,7 +26,8 @@ export class EditFilmePage {
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
     public fProvider: FilmesProvider,
-    public authService: AuthProvider
+    public authService: AuthProvider,
+    public viewCtrl: ViewController
   ) {
     this.filme = this.navParams.get('filme');
     this.paises = this.authService.getPais();
@@ -84,4 +85,7 @@ export class EditFilmePage {
     toast.present();
   }
 
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
 }

@@ -53,7 +53,20 @@ export class DetailsSeriePage {
   }
 
   goToEditSerie(serie){
-    this.navCtrl.push(EditSeriePage, { serie });
+    let myModal = this.modalCtrl.create(EditSeriePage, { serie });
+    myModal.present();
+  }
+
+  goToEditEpisodio(e){
+    let myModal = this.modalCtrl.create(EditEpisodioPage, { e });
+    /*myModal.onDidDismiss(() => { });*/
+    myModal.present();
+  }
+
+  goToEditTemporada(t){
+    let myModal = this.modalCtrl.create(EditTemporadaPage, { t });
+    /*myModal.onDidDismiss(() => { });*/
+    myModal.present();
   }
 
   goToEpisodio(t){

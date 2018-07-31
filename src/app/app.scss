@@ -14,3 +14,20 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+    .toolbar-md-secondary .bar-button-clear-md, 
+    .toolbar-md-secondary .bar-button-default-md, 
+    .toolbar-md-secondary .bar-button-outline-md, 
+    .toolbar-md-secondary .toolbar-title-md {
+        color: #79CDCD;
+    }   
+
+    .bkg-menu {
+        color: #e8e8e8;
+        background-color: #000000;
+        padding-right: 16px;
+    }
+
+    .item-inner {
+        padding-left: 8px;
+    }
