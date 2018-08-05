@@ -9,20 +9,22 @@
 
 <ion-content padding>
 
-  <ion-list inset>
-    <ion-item class="input-left">
+  <form [formGroup]="elencoForm" (ngSubmit)="addElenco()">
+    <ion-list inset>
+      <ion-item class="input-left">
         <ion-label class="label-margin-left">Artista</ion-label>
-        <ion-select  interface="popover"[(ngModel)]="elenco.artista_key">
+        <ion-select formControlName="artista_key" interface="popover">
           <ion-option *ngFor="let a of artistas | async" [value] = "a.key">{{a.nome}}</ion-option>
         </ion-select>
-    </ion-item>  
-    <ion-item class="input-left">
-      <ion-input type="text" [(ngModel)]="elenco.atividade" placeholder="Atividade"></ion-input>
-    </ion-item>
-  </ion-list>
-  <ion-list class="btn-reg">
-    <button ion-button color="secondary" (click)="addElenco(elenco)" full>Salvar</button>
-  </ion-list>
+      </ion-item>  
+      <ion-item class="input-left">
+        <ion-input type="text" formControlName="atividade" placeholder="Atividade"></ion-input>
+      </ion-item>
+      <ion-list class="btn-salvar">
+        <button ion-button color="secondary" [disabled]="!elencoForm.valid" full>salvar</button>
+      </ion-list>
+    </ion-list>
+  </form>
 
 </ion-content>
   

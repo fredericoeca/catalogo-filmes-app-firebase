@@ -32,12 +32,29 @@
     <ion-row>
       <p class="p-0 align">{{filme.sinopse}}</p>
     </ion-row>
-    <hr class="color-line" />
 
-    <ion-row>
-      <p class="p-0"><button class="btn right" (click)="goToElenco(filme)">artista</button></p>
-    </ion-row>
-    <hr class="color-line" />
+    <ion-list>
+      <ion-list-header>
+        Elenco <button class="btn right" (click)="goToElenco(filme)">adicionar</button>
+      </ion-list-header>
+
+      <ion-scroll scrollX="true" style="height:180px">
+      <ion-row nowrap>
+        <div *ngFor="let a of artistas | async">
+          <div *ngFor="let e of elenco | async">
+            <ion-col *ngIf="a.key === e.artista_key && filme.key === e.producao_key">
+              <img class="foto" src="{{a.foto}}" />
+              <p class="nome-at">{{a.nome}}</p>
+              <p class="ativ-at">{{e.atividade}}</p>
+            </ion-col>
+          </div>
+        </div>
+      </ion-row>
+      </ion-scroll>
+
+      <hr class="color-line" />
+
+    </ion-list>
 </ion-list>
 
 <ion-fab top right edge>
