@@ -44,7 +44,7 @@
           <div *ngFor="let e of elenco | async">
             <ion-col *ngIf="a.key === e.artista_key && filme.key === e.producao_key">
               <img class="foto" src="{{a.foto}}" />
-              <p class="nome-at">{{a.nome}}</p>
+              <p class="nome-at"><button class="btn-apagar" (click)="showConfirm(e)">{{a.nome}}</button></p>
               <p class="ativ-at">{{e.atividade}}</p>
             </ion-col>
           </div>

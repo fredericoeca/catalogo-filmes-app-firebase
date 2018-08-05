@@ -93,4 +93,18 @@ page-details-filme {
         border-bottom: 1px solid #828282;
         color: #dedede
     }
+
+    .btn-apagar{
+        background-color: transparent;
+        color: #dedede;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    .alert-md .alert-wrapper {
+        background-color: #363636;
+        color: #B5B5B5;
+    }
 }

@@ -33,6 +33,29 @@
     </ion-row>
 
     <ion-list>
+        <ion-list-header>
+          Elenco <button class="btn right" (click)="goToElenco(serie)">adicionar</button>
+        </ion-list-header>
+  
+        <ion-scroll scrollX="true" style="height:180px">
+        <ion-row nowrap>
+          <div *ngFor="let a of artistas | async">
+            <div *ngFor="let e of elenco | async">
+              <ion-col *ngIf="a.key === e.artista_key && serie.key === e.producao_key">
+                <img class="foto" src="{{a.foto}}" />
+                <p class="nome-at"><button class="btn-apagar" (click)="showConfirm(e)">{{a.nome}}</button></p>
+                <p class="ativ-at">{{e.atividade}}</p>
+              </ion-col>
+            </div>
+          </div>
+        </ion-row>
+        </ion-scroll>
+  
+        <hr class="color-line" />
+  
+      </ion-list>
+
+    <ion-list>
       <ion-list-header>
         Temporadas <button class="btn right" (click)="goToTemporada(serie)">adicionar</button>
       </ion-list-header>

@@ -30,10 +30,6 @@ page-details-serie {
         color: #e8e8e8;
     }
 
-    .list-header-md{
-        margin-bottom: 0;
-    }
-
     .label-md {
         margin: 8px 8px 8px 0;
     }
@@ -97,5 +93,55 @@ page-details-serie {
 
     .color-hr{
         background-color: #b5b5b5;
+    }
+
+    .foto{
+        width: 70px;
+        height: 95px;
+    }
+
+    .nome-at {
+        font-size: 12px;
+        margin: 2px 0;
+        width: 70px;
+        height: 28px;
+        padding-left: 5px;
+    }
+
+    .ativ-at{
+        font-size: 10px;
+        margin: 2px 0 2px 0;
+        width: 90px;
+        padding-left: 5px;
+    }
+
+    .inner{
+        width: 2000px;
+        height: 100%;
+        ion-card{
+            display: table-cell;
+        }
+    } 
+
+    .list-header-md {
+        margin-bottom: 0;
+        background-color: #000;
+        margin-top: 10px;
+        border-bottom: 1px solid #828282;
+        color: #dedede
+    }
+
+    .btn-apagar{
+        background-color: transparent;
+        color: #dedede;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    .alert-md .alert-wrapper {
+        background-color: #363636;
+        color: #B5B5B5;
     }
 }
