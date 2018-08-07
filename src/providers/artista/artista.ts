@@ -15,7 +15,7 @@ export class ArtistaProvider {
     return this.artistas;
   }
 
-  addArtista(artista: Artista){
+  addArtista(artista: Artista){ 
     return this.artistas.push(artista);
   }
 
